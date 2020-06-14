@@ -1,21 +1,37 @@
 package com.example.customtabdialog;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.customtabdialog.ui.activities.HomeActivity;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
     private String TAG = "MainActivity";
+
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
+    private FirebaseAuth.AuthStateListener mAuthStateListener
+            = firebaseAuth -> {
+        if (firebaseAuth.getCurrentUser() != null) {
+            startActivity(new Intent(MainActivity.this, HomeActivity.class));
+        }
+
+    };
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAuth.addAuthStateListener(mAuthStateListener);
 
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Create and show the dialog.
                 TabbedDialog dialogFragment = new TabbedDialog();
-                dialogFragment.show(ft,"dialog");
+                dialogFragment.show(ft, "dialog");
 
             }
         });

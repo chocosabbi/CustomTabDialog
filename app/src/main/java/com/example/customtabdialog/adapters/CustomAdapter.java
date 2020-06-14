@@ -1,5 +1,6 @@
-package com.example.customtabdialog;
+package com.example.customtabdialog.adapters;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -12,8 +13,8 @@ public class CustomAdapter extends FragmentPagerAdapter {
     List<Fragment> mFragmentCollection = new ArrayList<>();
     List<String> mTitleCollection = new ArrayList<>();
 
-    public CustomAdapter(FragmentManager fm) {
-        super(fm);
+    public CustomAdapter(@NonNull FragmentManager fm, int behavior) {
+        super(fm, behavior);
     }
 
     public void addFragment(String title, Fragment fragment) {

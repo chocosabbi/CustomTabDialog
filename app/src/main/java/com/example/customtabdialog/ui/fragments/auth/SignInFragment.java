@@ -2,6 +2,7 @@ package com.example.customtabdialog.ui.fragments.auth;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
@@ -15,6 +16,10 @@ import android.widget.EditText;
 
 import com.example.customtabdialog.R;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 /**
@@ -49,29 +54,43 @@ public class SignInFragment extends Fragment {
         mCancel = view.findViewById(R.id.dialog_cancel);
 
 
-        mConfirm.setOnClickListener(v -> {
-            String email = et_email.getText().toString();
-            if (TextUtils.isEmpty(email)) {
-                et_email.requestFocus();
-                et_email.setError(getString(R.string.error_email_required));
-                return;
-            }
-            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                et_email.requestFocus();
-                et_email.setError(getString(R.string.error_email_pattern));
-                return;
-            }
+        mConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = et_email.getText().toString();
+                if (TextUtils.isEmpty(email)) {
+                    et_email.requestFocus();
+                    et_email.setError(getString(R.string.error_email_required));
+                    return;
+                }
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    et_email.requestFocus();
+                    et_email.setError(getString(R.string.error_email_pattern));
+                    return;
+                }
 
-            String password = et_password.getText().toString();
-            if (TextUtils.isEmpty(password)) {
-                et_password.requestFocus();
-                et_password.setError(getString(R.string.error_password_required));
-                return;
-            }
-            mAuth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(task -> Log.d(TAG, "onComplete: " + task.isSuccessful()))
-                    .addOnFailureListener(e -> Log.d(TAG, "onFailure: " + e.getLocalizedMessage()));
+                String password = et_password.getText().toString();
+                if (TextUtils.isEmpty(password)) {
+                    et_password.requestFocus();
+                    et_password.setError(getString(R.string.error_password_required));
+                    return;
+                }
+                mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                Log.d(TAG, "onComplete: " + task.isSuccessful());
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.d(TAG, "onFailure: " + e.getLocalizedMessage());
+                            }
+                        });
 
+
+            }
         });
         mCancel.setOnClickListener(new View.OnClickListener() {
             @Override
