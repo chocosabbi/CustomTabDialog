@@ -89,7 +89,7 @@ public class SignUpFragment extends Fragment {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    UserModel user = new UserModel(mAuth.getCurrentUser().getUid(), name, email);
+                                    UserModel user = new UserModel(name, email);
                                     firebaseFirestore.collection(COLLECTION_USERS)
                                             .document(mAuth.getCurrentUser().getUid())
                                             .set(user);
