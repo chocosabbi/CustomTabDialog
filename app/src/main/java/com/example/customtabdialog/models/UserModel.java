@@ -1,12 +1,12 @@
 package com.example.customtabdialog.models;
 
 public class UserModel {
-    private String name, email;
+    private String name, email, uid;
 
     public UserModel() {
     }
 
-    public UserModel(String name, String email) {
+    public UserModel(String uid, String name, String email) {
         this.name = name;
         this.email = email;
     }
@@ -25,5 +25,13 @@ public class UserModel {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }
