@@ -16,9 +16,7 @@ public class TabbedDialog extends DialogFragment {
     ViewPager viewPager;
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootview = inflater.inflate(R.layout.dialog_sample,container,false);
         tabLayout = rootview.findViewById(R.id.tab_layout);
         viewPager = rootview.findViewById(R.id.tab_view_pager);

@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "1024196173369",
+    "firebase_url": "https://fit-bud-training-ec456.firebaseio.com",
+    "project_id": "fit-bud-training-ec456",
+    "storage_bucket": "fit-bud-training-ec456.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024196173369:android:0a86e61260867a2f0377e8",
+        "android_client_info": {
+          "package_name": "com.example.customtabdialog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024196173369-gcgm6u8b7ustt7pl4efk7pjapm24fkgd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe5k2s_KUonHcMH5Rh3GJsSD5S05BX_Tw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024196173369-vks7d6jr4satpgb3jntqal8s4nbovrnk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024196173369:android:19232c9912d78bed0377e8",
+        "android_client_info": {
+          "package_name": "com.example.loginapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024196173369-981a38ai5ni9pd7b884b8rui9vd81c2r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.loginapplication",
+            "certificate_hash": "5b657b3c6e2fba6c618d47ce8a6d93fe280ccd00"
+          }
+        },
+        {
+          "client_id": "1024196173369-gcgm6u8b7ustt7pl4efk7pjapm24fkgd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe5k2s_KUonHcMH5Rh3GJsSD5S05BX_Tw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024196173369-vks7d6jr4satpgb3jntqal8s4nbovrnk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024196173369:android:31387b875f8d12a50377e8",
+        "android_client_info": {
+          "package_name": "com.ragedevelopers.fitbudtraining"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024196173369-ofcs5dq2kgk17l3855lrl76pe0hlltje.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ragedevelopers.fitbudtraining",
+            "certificate_hash": "5b657b3c6e2fba6c618d47ce8a6d93fe280ccd00"
+          }
+        },
+        {
+          "client_id": "1024196173369-gcgm6u8b7ustt7pl4efk7pjapm24fkgd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe5k2s_KUonHcMH5Rh3GJsSD5S05BX_Tw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024196173369-vks7d6jr4satpgb3jntqal8s4nbovrnk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
