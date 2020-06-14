@@ -1,11 +1,15 @@
 package com.example.customtabdialog.ui.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.customtabdialog.MainActivity;
 import com.example.customtabdialog.R;
 import com.example.customtabdialog.models.UserModel;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,6 +25,7 @@ public class HomeActivity extends AppCompatActivity {
     private FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private TextView tv_welcome;
+    private Button btnLogout;
 
     @Override
 
@@ -28,7 +33,17 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         tv_welcome = findViewById(R.id.tv_welcome);
+        btnLogout = findViewById(R.id.logout);
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                startActivity(new Intent(HomeActivity.this, MainActivity.class));
+                finish();
+            }
+        });
         getUserData();
+
     }
 
     private void getUserData() {
