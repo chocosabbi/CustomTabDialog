@@ -1,10 +1,6 @@
 package com.example.customtabdialog.ui.fragments.auth;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
@@ -13,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.example.customtabdialog.R;
 import com.example.customtabdialog.models.UserModel;
