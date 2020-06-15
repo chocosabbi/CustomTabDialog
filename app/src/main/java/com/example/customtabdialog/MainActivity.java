@@ -19,11 +19,14 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     private FirebaseAuth.AuthStateListener mAuthStateListener
-            = firebaseAuth -> {
-        if (firebaseAuth.getCurrentUser() != null) {
-            startActivity(new Intent(MainActivity.this, HomeActivity.class));
-        }
+            = new FirebaseAuth.AuthStateListener() {
+        @Override
+        public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+            if (firebaseAuth.getCurrentUser() != null) {
+                MainActivity.this.startActivity(new Intent(MainActivity.this, HomeActivity.class));
+            }
 
+        }
     };
 
 
